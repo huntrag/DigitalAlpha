@@ -14,8 +14,11 @@ A SEC Filing Explorer for Inter IIT Tech Meet High Prep Challenge 2022
 
 This is a team project by:
 
-- huntrag
-- KaushikDey647
+- Prateek Singh
+- Raghav Gade
+- Miraj Shah
+- Kaushik Dey
+- Chinmay Negi
 
 In this Project, we shall be looking into utilizing the [EDGAR](https://www.sec.gov/edgar/searchedgar/) database of SEC Filings to explore the data and build a model to predict the financial sentiment of a company. The project will be built using Python mostly and its aim is to utilize various financial forms like 10-K and 10-Q to predict the financial performance of a company.
 
