@@ -1,2 +1,5 @@
 API for logos
-https://eodhistoricaldata.com/img/logos/US/ADBE.png
+https://eodhistoricaldata.com/img/logos/US/{Ticker}.png
+
+For getting company info
+https://sec.report/CIK/{CIK Number}
