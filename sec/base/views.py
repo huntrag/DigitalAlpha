@@ -7,6 +7,8 @@ import pymongo
 from dotenv import load_dotenv
 import datetime
 import os
+from bson.objectid import ObjectId
+from bson import BSON
 
 load_dotenv()
 MONGODB_URI = os.environ['MONGODB_URI']
@@ -14,7 +16,6 @@ MONGODB_URI = os.environ['MONGODB_URI']
 client = pymongo.MongoClient(MONGODB_URI)
 db1=client['tech-meet']
 db=db1['comp_names']
-
 
 def home(request):
     q=request.GET.get('q') 
@@ -26,6 +27,6 @@ def home(request):
     return render(request, 'base/static.html')
 
 def comp(request,pk):
-    comp=db.find_one({'cik':pk})
+    comp=db.find_one(ObjectId(pk))
     context={'comp':comp} 
     return render(request, 'base/comp.html',context)
