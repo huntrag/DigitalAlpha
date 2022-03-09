@@ -3,3 +3,6 @@ https://eodhistoricaldata.com/img/logos/US/{Ticker}.png
 
 For getting company info
 https://sec.report/CIK/{CIK Number}
+
+headers
+headers={'user-agent':'Mozilla/5.0 (X11; Fedora; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36'}

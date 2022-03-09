@@ -21,7 +21,8 @@ def home(request):
     q=request.GET.get('q') 
     if request.GET.get('q')!=None:
         comp=db.find_one({'ticker':q})
-        print(comp['_id'])
+        if comp==None:
+            return render(request, 'base/static.html')
         context={'comp':comp,'compid':comp['_id']}
         return render(request, 'base/home.html',context)
     return render(request, 'base/static.html')
