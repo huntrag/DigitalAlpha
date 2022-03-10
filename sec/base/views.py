@@ -1,15 +1,16 @@
 from django.shortcuts import render
 import json
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 # Create your views here.
 import pymongo
 from dotenv import load_dotenv
 import datetime
 import os
+import json
 from bson.objectid import ObjectId
 from bson import BSON
-
+from bson import json_util 
 load_dotenv()
 MONGODB_URI = os.environ['MONGODB_URI']
 
@@ -31,3 +32,4 @@ def comp(request,pk):
     comp=db.find_one(ObjectId(pk))
     context={'comp':comp} 
     return render(request, 'base/comp.html',context)
+
