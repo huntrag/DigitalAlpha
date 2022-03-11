@@ -2,12 +2,12 @@ import json
 import openpyxl
 from collections import defaultdict
 
-with open('input.json', 'r') as json_file:
+with open('data/input.json', 'r') as json_file:
 	json_load = json.load(json_file)
 
 new_dict = defaultdict(list)
 
-comp=openpyxl.load_workbook("Software Company List v2.xlsx")
+comp=openpyxl.load_workbook("data/Software Company List v2.xlsx")
 
 sh = comp.active
 count=0

@@ -1,926 +1,926 @@
 [
     {
-        "cik_str": 1459417,
+        "cik": 1459417,
         "ticker": "TWOU",
         "title": "2U, Inc."
     },
     {
-        "cik_str": 1118974,
+        "cik": 1118974,
         "ticker": "TDCH",
         "title": "30DC, Inc."
     },
     {
-        "cik_str": 1556753,
+        "cik": 1556753,
         "ticker": "DPSM",
         "title": "3D PIONEER SYSTEMS, INC."
     },
     {
-        "cik_str": 1023731,
+        "cik": 1023731,
         "ticker": "EGHT",
         "title": "8X8 INC /DE/"
     },
     {
-        "cik_str": 1580808,
+        "cik": 1580808,
         "ticker": "ATEN",
         "title": "A10 Networks, Inc."
     },
     {
-        "cik_str": 935036,
+        "cik": 935036,
         "ticker": "ACIW",
         "title": "ACI WORLDWIDE, INC."
     },
     {
-        "cik_str": 1085621,
+        "cik": 1085621,
         "ticker": "ACTA",
         "title": "ACTUA CORP"
     },
     {
-        "cik_str": 1119691,
+        "cik": 1119691,
         "ticker": "",
         "title": "ADEXA INC"
     },
     {
-        "cik_str": 796343,
+        "cik": 796343,
         "ticker": "ADBE",
         "title": "ADOBE INC."
     },
     {
-        "cik_str": 1342936,
+        "cik": 1342936,
         "ticker": "AVOI",
         "title": "Advanced Voice Recognition Systems, Inc"
     },
     {
-        "cik_str": 869531,
+        "cik": 869531,
         "ticker": "ADGO",
         "title": "Advantego Corp"
     },
     {
-        "cik_str": 78749,
+        "cik": 78749,
         "ticker": "AGYS",
         "title": "AGILYSYS INC"
     },
     {
-        "cik_str": 1459200,
+        "cik": 1459200,
         "ticker": "ALRM",
         "title": "Alarm.com Holdings, Inc."
     },
     {
-        "cik_str": 1701732,
+        "cik": 1701732,
         "ticker": "ALTR",
         "title": "Altair Engineering Inc."
     },
     {
-        "cik_str": 1689923,
+        "cik": 1689923,
         "ticker": "AYX",
         "title": "Alteryx, Inc."
     },
     {
-        "cik_str": 1540755,
+        "cik": 1540755,
         "ticker": "PLAN",
         "title": "Anaplan, Inc."
     },
     {
-        "cik_str": 1013462,
+        "cik": 1013462,
         "ticker": "ANSS",
         "title": "ANSYS INC"
     },
     {
-        "cik_str": 1433195,
+        "cik": 1433195,
         "ticker": "APPF",
         "title": "APPFOLIO INC"
     },
     {
-        "cik_str": 1441683,
+        "cik": 1441683,
         "ticker": "APPN",
         "title": "APPIAN CORP"
     },
     {
-        "cik_str": 1477720,
+        "cik": 1477720,
         "ticker": "ASAN",
         "title": "Asana, Inc."
     },
     {
-        "cik_str": 929940,
+        "cik": 929940,
         "ticker": "AZPN",
         "title": "ASPEN TECHNOLOGY INC /DE/"
     },
     {
-        "cik_str": 884144,
+        "cik": 884144,
         "ticker": "ASUR",
         "title": "ASURE SOFTWARE INC"
     },
     {
-        "cik_str": 1362190,
+        "cik": 1362190,
         "ticker": "AEYE",
         "title": "AUDIOEYE INC"
     },
     {
-        "cik_str": 769397,
+        "cik": 769397,
         "ticker": "ADSK",
         "title": "Autodesk, Inc."
     },
     {
-        "cik_str": 8670,
+        "cik": 8670,
         "ticker": "ADP",
         "title": "AUTOMATIC DATA PROCESSING INC"
     },
     {
-        "cik_str": 1348036,
+        "cik": 1348036,
         "ticker": "AVLR",
         "title": "AVALARA, INC."
     },
     {
-        "cik_str": 1015739,
+        "cik": 1015739,
         "ticker": "AWRE",
         "title": "AWARE INC /MA/"
     },
     {
-        "cik_str": 1576169,
+        "cik": 1576169,
         "ticker": "BNFT",
         "title": "Benefitfocus, Inc."
     },
     {
-        "cik_str": 1031308,
+        "cik": 1031308,
         "ticker": "BSY",
         "title": "BENTLEY SYSTEMS INC"
     },
     {
-        "cik_str": 1786352,
+        "cik": 1786352,
         "ticker": "BILL",
         "title": "Bill.com Holdings, Inc."
     },
     {
-        "cik_str": 1019034,
+        "cik": 1019034,
         "ticker": "BKYI",
         "title": "BIO KEY INTERNATIONAL INC"
     },
     {
-        "cik_str": 1280058,
+        "cik": 1280058,
         "ticker": "BLKB",
         "title": "BLACKBAUD INC"
     },
     {
-        "cik_str": 1567900,
+        "cik": 1567900,
         "ticker": "BLBX",
         "title": "BLACKBOXSTOCKS INC."
     },
     {
-        "cik_str": 1666134,
+        "cik": 1666134,
         "ticker": "BL",
         "title": "BLACKLINE, INC."
     },
     {
-        "cik_str": 1073349,
+        "cik": 1073349,
         "ticker": "EPAY",
         "title": "BOTTOMLINE TECHNOLOGIES INC"
     },
     {
-        "cik_str": 1372612,
+        "cik": 1372612,
         "ticker": "BOX",
         "title": "BOX INC"
     },
     {
-        "cik_str": 1624512,
+        "cik": 1624512,
         "ticker": "BOXL",
         "title": "Boxlight Corp"
     },
     {
-        "cik_str": 1378590,
+        "cik": 1378590,
         "ticker": "BLIN",
         "title": "Bridgeline Digital, Inc."
     },
     {
-        "cik_str": 1567771,
+        "cik": 1567771,
         "ticker": "BDGY",
         "title": "BRIDGEWAY NATIONAL CORP."
     },
     {
-        "cik_str": 1054721,
+        "cik": 1054721,
         "ticker": "BSQR",
         "title": "BSQUARE CORP /WA"
     },
     {
-        "cik_str": 813672,
+        "cik": 813672,
         "ticker": "CDNS",
         "title": "CADENCE DESIGN SYSTEMS INC"
     },
     {
-        "cik_str": 1609702,
+        "cik": 1609702,
         "ticker": "CDK",
         "title": "CDK Global, Inc."
     },
     {
-        "cik_str": 1768267,
+        "cik": 1768267,
         "ticker": "CRNC",
         "title": "Cerence Inc."
     },
     {
-        "cik_str": 1725057,
+        "cik": 1725057,
         "ticker": "CDAY",
         "title": "Ceridian HCM Holding Inc."
     },
     {
-        "cik_str": 1451797,
+        "cik": 1451797,
         "ticker": "CSJT",
         "title": "Changsheng International Group Ltd"
     },
     {
-        "cik_str": 1169652,
+        "cik": 1169652,
         "ticker": "ECOM",
         "title": "CHANNELADVISOR CORP"
     },
     {
-        "cik_str": 1022505,
+        "cik": 1022505,
         "ticker": "CLOK",
         "title": "CIPHERLOC Corp"
     },
     {
-        "cik_str": 877890,
+        "cik": 877890,
         "ticker": "CTXS",
         "title": "CITRIX SYSTEMS INC"
     },
     {
-        "cik_str": 827876,
+        "cik": 827876,
         "ticker": "CLSK",
         "title": "CLEANSPARK, INC."
     },
     {
-        "cik_str": 1393548,
+        "cik": 1393548,
         "ticker": "CLIS",
         "title": "ClickStream Corp"
     },
     {
-        "cik_str": 1477333,
+        "cik": 1477333,
         "ticker": "NET",
         "title": "Cloudflare, Inc."
     },
     {
-        "cik_str": 1169561,
+        "cik": 1169561,
         "ticker": "CVLT",
         "title": "COMMVAULT SYSTEMS INC"
     },
     {
-        "cik_str": 1385867,
+        "cik": 1385867,
         "ticker": "COUP",
         "title": "Coupa Software Inc"
     },
     {
-        "cik_str": 1535527,
+        "cik": 1535527,
         "ticker": "CRWD",
         "title": "CrowdStrike Holdings, Inc."
     },
     {
-        "cik_str": 1522787,
+        "cik": 1522787,
         "ticker": "CYBF",
         "title": "Cyberfort Software, Inc."
     },
     {
-        "cik_str": 1084577,
+        "cik": 1084577,
         "ticker": "CYRN",
         "title": "CYREN Ltd."
     },
     {
-        "cik_str": 1561550,
+        "cik": 1561550,
         "ticker": "DDOG",
         "title": "Datadog, Inc."
     },
     {
-        "cik_str": 1724570,
+        "cik": 1724570,
         "ticker": "MSP",
         "title": "DATTO HOLDING CORP."
     },
     {
-        "cik_str": 1438231,
+        "cik": 1438231,
         "ticker": "DMRC",
         "title": "Digimarc CORP"
     },
     {
-        "cik_str": 317788,
+        "cik": 317788,
         "ticker": "APPS",
         "title": "Digital Turbine, Inc."
     },
     {
-        "cik_str": 1261333,
+        "cik": 1261333,
         "ticker": "DOCU",
         "title": "DOCUSIGN, INC."
     },
     {
-        "cik_str": 1505952,
+        "cik": 1505952,
         "ticker": "DOMO",
         "title": "DOMO, INC."
     },
     {
-        "cik_str": 1467623,
+        "cik": 1467623,
         "ticker": "DBX",
         "title": "DROPBOX, INC."
     },
     {
-        "cik_str": 1773383,
+        "cik": 1773383,
         "ticker": "DT",
         "title": "Dynatrace, Inc."
     },
     {
-        "cik_str": 814549,
+        "cik": 814549,
         "ticker": "EBIX",
         "title": "EBIX INC"
     },
     {
-        "cik_str": 1437491,
+        "cik": 1437491,
         "ticker": "ZEST",
         "title": "Ecoark Holdings, Inc."
     },
     {
-        "cik_str": 1066194,
+        "cik": 1066194,
         "ticker": "EGAN",
         "title": "EGAIN Corp"
     },
     {
-        "cik_str": 1707753,
+        "cik": 1707753,
         "ticker": "ESTC",
         "title": "Elastic N.V."
     },
     {
-        "cik_str": 1337619,
+        "cik": 1337619,
         "ticker": "ENV",
         "title": "ENVESTNET, INC."
     },
     {
-        "cik_str": 1437352,
+        "cik": 1437352,
         "ticker": "EVBG",
         "title": "EVERBRIDGE, INC."
     },
     {
-        "cik_str": 1052054,
+        "cik": 1052054,
         "ticker": "EVOL",
         "title": "EVOLVING SYSTEMS INC"
     },
     {
-        "cik_str": 814547,
+        "cik": 814547,
         "ticker": "FICO",
         "title": "FAIR ISAAC CORP"
     },
     {
-        "cik_str": 922521,
+        "cik": 922521,
         "ticker": "FALC",
         "title": "FALCONSTOR SOFTWARE INC"
     },
     {
-        "cik_str": 1517413,
+        "cik": 1517413,
         "ticker": "FSLY",
         "title": "Fastly, Inc."
     },
     {
-        "cik_str": 1288847,
+        "cik": 1288847,
         "ticker": "FIVN",
         "title": "Five9, Inc."
     },
     {
-        "cik_str": 1262039,
+        "cik": 1262039,
         "ticker": "FTNT",
         "title": "Fortinet, Inc."
     },
     {
-        "cik_str": 1064722,
+        "cik": 1064722,
         "ticker": "GMPW",
         "title": "GIVEMEPOWER CORP"
     },
     {
-        "cik_str": 944480,
+        "cik": 944480,
         "ticker": "GVP",
         "title": "GSE SYSTEMS INC"
     },
     {
-        "cik_str": 1682325,
+        "cik": 1682325,
         "ticker": "GTYH",
         "title": "GTY Technology Holdings Inc."
     },
     {
-        "cik_str": 1528396,
+        "cik": 1528396,
         "ticker": "GWRE",
         "title": "Guidewire Software, Inc."
     },
     {
-        "cik_str": 1021435,
+        "cik": 1021435,
         "ticker": "HPTO",
         "title": "hopTo Inc."
     },
     {
-        "cik_str": 1404655,
+        "cik": 1404655,
         "ticker": "HUBS",
         "title": "HUBSPOT INC"
     },
     {
-        "cik_str": 837852,
+        "cik": 837852,
         "ticker": "IDEX",
         "title": "IDEANOMICS, INC."
     },
     {
-        "cik_str": 941685,
+        "cik": 941685,
         "ticker": "IWSY",
         "title": "IMAGEWARE SYSTEMS INC"
     },
     {
-        "cik_str": 1081745,
+        "cik": 1081745,
         "ticker": "INLX",
         "title": "INTELLINETICS, INC."
     },
     {
-        "cik_str": 736012,
+        "cik": 736012,
         "ticker": "INTZ",
         "title": "INTRUSION INC"
     },
     {
-        "cik_str": 896878,
+        "cik": 896878,
         "ticker": "INTU",
         "title": "INTUIT INC"
     },
     {
-        "cik_str": 829323,
+        "cik": 829323,
         "ticker": "INUV",
         "title": "Inuvo, Inc."
     },
     {
-        "cik_str": 727634,
+        "cik": 727634,
         "ticker": "ISIGN",
         "title": "iSign Solutions Inc."
     },
     {
-        "cik_str": 843006,
+        "cik": 843006,
         "ticker": "ISDR",
         "title": "ISSUER DIRECT CORP"
     },
     {
-        "cik_str": 1397183,
+        "cik": 1397183,
         "ticker": "IVDA",
         "title": "Iveda Solutions, Inc."
     },
     {
-        "cik_str": 807882,
+        "cik": 807882,
         "ticker": "JACK",
         "title": "JACK IN THE BOX INC"
     },
     {
-        "cik_str": 1721947,
+        "cik": 1721947,
         "ticker": "JAMF",
         "title": "Jamf Holding Corp."
     },
     {
-        "cik_str": 1800667,
+        "cik": 1800667,
         "ticker": "FROG",
         "title": "JFrog Ltd"
     },
     {
-        "cik_str": 838796,
+        "cik": 838796,
         "ticker": "KIWB",
         "title": "Kiwibox.Com, Inc."
     },
     {
-        "cik_str": 1102993,
+        "cik": 1102993,
         "ticker": "LPSN",
         "title": "LIVEPERSON INC"
     },
     {
-        "cik_str": 791014,
+        "cik": 791014,
         "ticker": "",
         "title": "MAIL BOXES ETC"
     },
     {
-        "cik_str": 1056696,
+        "cik": 1056696,
         "ticker": "MANH",
         "title": "MANHATTAN ASSOCIATES INC"
     },
     {
-        "cik_str": 1389002,
+        "cik": 1389002,
         "ticker": "MRIN",
         "title": "MARIN SOFTWARE INC"
     },
     {
-        "cik_str": 1353499,
+        "cik": 1353499,
         "ticker": "MAXD",
         "title": "Max Sound Corp"
     },
     {
-        "cik_str": 1001601,
+        "cik": 1001601,
         "ticker": "MGTI",
         "title": "MGT CAPITAL INVESTMENTS, INC."
     },
     {
-        "cik_str": 789019,
+        "cik": 789019,
         "ticker": "MSFT",
         "title": "MICROSOFT CORP"
     },
     {
-        "cik_str": 1050446,
+        "cik": 1050446,
         "ticker": "MSTR",
         "title": "MICROSTRATEGY Inc"
     },
     {
-        "cik_str": 807863,
+        "cik": 807863,
         "ticker": "MITK",
         "title": "MITEK SYSTEMS INC"
     },
     {
-        "cik_str": 1576914,
+        "cik": 1576914,
         "ticker": "MIXT",
         "title": "MiX Telematics Ltd"
     },
     {
-        "cik_str": 1118417,
+        "cik": 1118417,
         "ticker": "MODN",
         "title": "MODEL N, INC."
     },
     {
-        "cik_str": 1441816,
+        "cik": 1441816,
         "ticker": "MDB",
         "title": "MongoDB, Inc."
     },
     {
-        "cik_str": 1423746,
+        "cik": 1423746,
         "ticker": "AAPZ",
         "title": "Monster Arts Inc."
     },
     {
-        "cik_str": 1902733,
+        "cik": 1902733,
         "ticker": "NCNO",
         "title": "nCino, Inc."
     },
     {
-        "cik_str": 1039280,
+        "cik": 1039280,
         "ticker": "NTWK",
         "title": "NETSOL TECHNOLOGIES INC"
     },
     {
-        "cik_str": 1448056,
+        "cik": 1448056,
         "ticker": "NEWR",
         "title": "NEW RELIC, INC."
     },
     {
-        "cik_str": 849399,
+        "cik": 849399,
         "ticker": "NLOK",
         "title": "NortonLifeLock Inc."
     },
     {
-        "cik_str": 1002517,
+        "cik": 1002517,
         "ticker": "NUAN",
         "title": "Nuance Communications, Inc."
     },
     {
-        "cik_str": 1618732,
+        "cik": 1618732,
         "ticker": "NTNX",
         "title": "Nutanix, Inc."
     },
     {
-        "cik_str": 746210,
+        "cik": 746210,
         "ticker": "OBLG",
         "title": "Oblong, Inc."
     },
     {
-        "cik_str": 1660134,
+        "cik": 1660134,
         "ticker": "OKTA",
         "title": "Okta, Inc."
     },
     {
-        "cik_str": 1044777,
+        "cik": 1044777,
         "ticker": "OSPN",
         "title": "OneSpan Inc."
     },
     {
-        "cik_str": 1341439,
+        "cik": 1341439,
         "ticker": "ORCL",
         "title": "ORACLE CORP"
     },
     {
-        "cik_str": 1568100,
+        "cik": 1568100,
         "ticker": "PD",
         "title": "PagerDuty, Inc."
     },
     {
-        "cik_str": 1017655,
+        "cik": 1017655,
         "ticker": "PAYD",
         "title": "PAID INC"
     },
     {
-        "cik_str": 1327567,
+        "cik": 1327567,
         "ticker": "PANW",
         "title": "Palo Alto Networks Inc"
     },
     {
-        "cik_str": 1084384,
+        "cik": 1084384,
         "ticker": "TEUM",
         "title": "PARETEUM Corp"
     },
     {
-        "cik_str": 50471,
+        "cik": 50471,
         "ticker": "PCYG",
         "title": "PARK CITY GROUP INC"
     },
     {
-        "cik_str": 723531,
+        "cik": 723531,
         "ticker": "PAYX",
         "title": "PAYCHEX INC"
     },
     {
-        "cik_str": 1590955,
+        "cik": 1590955,
         "ticker": "PAYC",
         "title": "Paycom Software, Inc."
     },
     {
-        "cik_str": 1591698,
+        "cik": 1591698,
         "ticker": "PCTY",
         "title": "Paylocity Holding Corp"
     },
     {
-        "cik_str": 1013857,
+        "cik": 1013857,
         "ticker": "PEGA",
         "title": "PEGASYSTEMS INC"
     },
     {
-        "cik_str": 1665300,
+        "cik": 1665300,
         "ticker": "PHUN",
         "title": "Phunware, Inc."
     },
     {
-        "cik_str": 1679826,
+        "cik": 1679826,
         "ticker": "PING",
         "title": "Ping Identity Holding Corp."
     },
     {
-        "cik_str": 876167,
+        "cik": 876167,
         "ticker": "PRGS",
         "title": "PROGRESS SOFTWARE CORP /MA"
     },
     {
-        "cik_str": 1392972,
+        "cik": 1392972,
         "ticker": "PRO",
         "title": "PROS Holdings, Inc."
     },
     {
-        "cik_str": 857005,
+        "cik": 857005,
         "ticker": "PTC",
         "title": "PTC INC."
     },
     {
-        "cik_str": 1410384,
+        "cik": 1410384,
         "ticker": "QTWO",
         "title": "Q2 Holdings, Inc."
     },
     {
-        "cik_str": 1107843,
+        "cik": 1107843,
         "ticker": "QLYS",
         "title": "QUALYS, INC."
     },
     {
-        "cik_str": 892482,
+        "cik": 892482,
         "ticker": "QUMU",
         "title": "Qumu Corp"
     },
     {
-        "cik_str": 1384365,
+        "cik": 1384365,
         "ticker": "RDAR",
         "title": "RAADR, INC."
     },
     {
-        "cik_str": 1560327,
+        "cik": 1560327,
         "ticker": "RPD",
         "title": "Rapid7, Inc."
     },
     {
-        "cik_str": 1046327,
+        "cik": 1046327,
         "ticker": "RNWK",
         "title": "REALNETWORKS INC"
     },
     {
-        "cik_str": 1384905,
+        "cik": 1384905,
         "ticker": "RNG",
         "title": "RingCentral, Inc."
     },
     {
-        "cik_str": 1167419,
+        "cik": 1167419,
         "ticker": "RIOT",
         "title": "Riot Blockchain, Inc."
     },
     {
-        "cik_str": 823546,
+        "cik": 823546,
         "ticker": "RKFL",
         "title": "ROCKETFUEL BLOCKCHAIN, INC."
     },
     {
-        "cik_str": 1108524,
+        "cik": 1108524,
         "ticker": "CRM",
         "title": "SALESFORCE.COM, INC."
     },
     {
-        "cik_str": 1019671,
+        "cik": 1019671,
         "ticker": "SEAC",
         "title": "SEACHANGE INTERNATIONAL INC"
     },
     {
-        "cik_str": 1468666,
+        "cik": 1468666,
         "ticker": "SCWX",
         "title": "SecureWorks Corp"
     },
     {
-        "cik_str": 1373715,
+        "cik": 1373715,
         "ticker": "NOW",
         "title": "ServiceNow, Inc."
     },
     {
-        "cik_str": 1351636,
+        "cik": 1351636,
         "ticker": "SSTI",
         "title": "SHOTSPOTTER, INC"
     },
     {
-        "cik_str": 1157817,
+        "cik": 1157817,
         "ticker": "SITOQ",
         "title": "SITO MOBILE, LTD."
     },
     {
-        "cik_str": 1764925,
+        "cik": 1764925,
         "ticker": "WORK",
         "title": "Slack Technologies, Inc."
     },
     {
-        "cik_str": 1301991,
+        "cik": 1301991,
         "ticker": "SMME",
         "title": "SmartMetric, Inc."
     },
     {
-        "cik_str": 1366561,
+        "cik": 1366561,
         "ticker": "SMAR",
         "title": "SMARTSHEET INC"
     },
     {
-        "cik_str": 948708,
+        "cik": 948708,
         "ticker": "SMSI",
         "title": "SMITH MICRO SOFTWARE, INC."
     },
     {
-        "cik_str": 1640147,
+        "cik": 1640147,
         "ticker": "SNOW",
         "title": "Snowflake Inc."
     },
     {
-        "cik_str": 1739942,
+        "cik": 1739942,
         "ticker": "SWI",
         "title": "SolarWinds Corp"
     },
     {
-        "cik_str": 1029744,
+        "cik": 1029744,
         "ticker": "SOFO",
         "title": "SONIC FOUNDRY INC"
     },
     {
-        "cik_str": 1353283,
+        "cik": 1353283,
         "ticker": "SPLK",
         "title": "SPLUNK INC"
     },
     {
-        "cik_str": 1517375,
+        "cik": 1517375,
         "ticker": "SPT",
         "title": "Sprout Social, Inc."
     },
     {
-        "cik_str": 1092699,
+        "cik": 1092699,
         "ticker": "SPSC",
         "title": "SPS COMMERCE INC"
     },
     {
-        "cik_str": 1643269,
+        "cik": 1643269,
         "ticker": "SUMO",
         "title": "Sumo Logic, Inc."
     },
     {
-        "cik_str": 1131554,
+        "cik": 1131554,
         "ticker": "SNCR",
         "title": "SYNCHRONOSS TECHNOLOGIES INC"
     },
     {
-        "cik_str": 883241,
+        "cik": 883241,
         "ticker": "SNPS",
         "title": "SYNOPSYS INC"
     },
     {
-        "cik_str": 1389067,
+        "cik": 1389067,
         "ticker": "TTCM",
         "title": "TAUTACHROME INC."
     },
     {
-        "cik_str": 1660280,
+        "cik": 1660280,
         "ticker": "TENB",
         "title": "Tenable Holdings, Inc."
     },
     {
-        "cik_str": 816761,
+        "cik": 816761,
         "ticker": "TDC",
         "title": "TERADATA CORP /DE/"
     },
     {
-        "cik_str": 1066684,
+        "cik": 1066684,
         "ticker": "TGLO",
         "title": "THEGLOBE COM INC"
     },
     {
-        "cik_str": 1671933,
+        "cik": 1671933,
         "ticker": "TTD",
         "title": "Trade Desk, Inc."
     },
     {
-        "cik_str": 1447669,
+        "cik": 1447669,
         "ticker": "TWLO",
         "title": "TWILIO INC"
     },
     {
-        "cik_str": 860731,
+        "cik": 860731,
         "ticker": "TYL",
         "title": "TYLER TECHNOLOGIES INC"
     },
     {
-        "cik_str": 1810806,
+        "cik": 1810806,
         "ticker": "U",
         "title": "Unity Software Inc."
     },
     {
-        "cik_str": 1505155,
+        "cik": 1505155,
         "ticker": "UPLD",
         "title": "Upland Software, Inc."
     },
     {
-        "cik_str": 1361113,
+        "cik": 1361113,
         "ticker": "VRNS",
         "title": "VARONIS SYSTEMS INC"
     },
     {
-        "cik_str": 1393052,
+        "cik": 1393052,
         "ticker": "VEEV",
         "title": "VEEVA SYSTEMS INC"
     },
     {
-        "cik_str": 1166388,
+        "cik": 1166388,
         "ticker": "VRNT",
         "title": "VERINT SYSTEMS INC"
     },
     {
-        "cik_str": 1615165,
+        "cik": 1615165,
         "ticker": "VERI",
         "title": "Veritone, Inc."
     },
     {
-        "cik_str": 1806837,
+        "cik": 1806837,
         "ticker": "VERX",
         "title": "Vertex, Inc."
     },
     {
-        "cik_str": 1082324,
+        "cik": 1082324,
         "ticker": "VHC",
         "title": "VirnetX Holding Corp"
     },
     {
-        "cik_str": 1124610,
+        "cik": 1124610,
         "ticker": "VMW",
         "title": "VMWARE, INC."
     },
     {
-        "cik_str": 704366,
+        "cik": 704366,
         "ticker": "WODI",
         "title": "WOD Retail Solutions, Inc."
     },
     {
-        "cik_str": 1327811,
+        "cik": 1327811,
         "ticker": "WDAY",
         "title": "Workday, Inc."
     },
     {
-        "cik_str": 1445305,
+        "cik": 1445305,
         "ticker": "WK",
         "title": "WORKIVA INC"
     },
     {
-        "cik_str": 1803696,
+        "cik": 1803696,
         "ticker": "XPER",
         "title": "Xperi Holding Corp"
     },
     {
-        "cik_str": 1614178,
+        "cik": 1614178,
         "ticker": "YEXT",
         "title": "Yext, Inc."
     },
     {
-        "cik_str": 1463172,
+        "cik": 1463172,
         "ticker": "ZEN",
         "title": "Zendesk, Inc."
     },
     {
-        "cik_str": 1794515,
+        "cik": 1794515,
         "ticker": "ZI",
         "title": "ZoomInfo Technologies Inc."
     },
     {
-        "cik_str": 1713683,
+        "cik": 1713683,
         "ticker": "ZS",
         "title": "Zscaler, Inc."
     },
     {
-        "cik_str": 1423774,
+        "cik": 1423774,
         "ticker": "ZUO",
         "title": "ZUORA INC"
     }
