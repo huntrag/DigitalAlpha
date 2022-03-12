@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from . import utils
 import json
 from django.shortcuts import render, redirect
 from django.http import HttpResponse,JsonResponse
@@ -39,8 +40,9 @@ def getAll(request):
 def getStrict(request):
     try:
         q=request.GET.get('q')
+        print(q)
         if q.isdigit():
-            data=db.find({'cik':int(q)})
+            data=db.find_one({'cik':int(q)})
         else:
             data=db.find_one({'ticker':q})
         return JsonResponse(parse_json({'status':'success','data':data}))
@@ -49,9 +51,11 @@ def getStrict(request):
 
 def getId(request,pk):
     try:
-        print(pk)
         data=db.find_one(ObjectId(pk))
-        return JsonResponse(parse_json({'status':'success','data':data}))
+        cik=data['cik']
+        text=utils.getSummary(cik)
+        print(text)
+        return JsonResponse(parse_json({'status':'success','data':data,'text':text}))
     except:
         return JsonResponse(parse_json({'status':'fail'}))
 
