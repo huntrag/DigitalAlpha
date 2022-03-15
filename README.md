@@ -8,7 +8,6 @@ A SEC Filing Explorer for Inter IIT Tech Meet High Prep Challenge 2022
 
 ![image](https://www.sec.gov/edgar/search/images/edgar-logo-2x.png)
 ![image](https://interiit-tech.org/static/media/logo_1.f4d40e83.png)
-![image](https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Indian_Institute_of_Technology_Bhubaneswar_Logo.svg/240px-Indian_Institute_of_Technology_Bhubaneswar_Logo.svg.png)
 
 ## Introduction
 
