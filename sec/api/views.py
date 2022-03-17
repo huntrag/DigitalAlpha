@@ -60,7 +60,7 @@ def getBS(request):
         raw = json.loads(request.body)
         # print(raw['ticker'])
         # data=raw['data']
-        data = db_form.find(
+        data = db_form.find_one(
             {'date': {"$gte": raw['date']}, 'ticker': raw['ticker']})
         # data = db_form.find({'ticker': raw['ticker']})
         return JsonResponse(parse_json({'status': 'success', 'data': data}))
