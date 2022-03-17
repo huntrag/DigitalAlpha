@@ -17,9 +17,11 @@ load_dotenv()
 MONGODB_URI = os.environ['MONGODB_URI']
 
 client = pymongo.MongoClient(MONGODB_URI)
+
 db1 = client['tech-meet']
 db_only=db1['comp']
 db= db1['info']
+
 db_form = db1['form-data']
 
 
@@ -61,6 +63,7 @@ def getBS(request):
         # print(raw['ticker'])
         # data=raw['data']
         data = db_form.find(
+
             {'date': {"$gte": raw['date']}, 'cik': int(raw['cik'])})
         # data = db_form.find({'ticker': raw['ticker']})
         return JsonResponse(parse_json({'status': 'success', 'data': data}))
@@ -76,6 +79,8 @@ def getBS(request):
 def getId(request, pk):
     try:
         data = db.find_one({"_id": ObjectId(pk)})
+
         return JsonResponse(parse_json({'status': 'success', 'data': data}))
     except:
         return JsonResponse(parse_json({'status': 'fail'}))
+
