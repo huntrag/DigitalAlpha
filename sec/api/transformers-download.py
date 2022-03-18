@@ -3,3 +3,4 @@ finbert = BertForSequenceClassification.from_pretrained('yiyanghkust/finbert-ton
 tokenizer = BertTokenizer.from_pretrained('yiyanghkust/finbert-tone')
 finbert.save_pretrained("C:\\Users\\Kaushik Dey\\Documents\\DigitalAlpha\\sec\\finbert-tone")
 tokenizer.save_pretrained("C:\\Users\\Kaushik Dey\\Documents\\DigitalAlpha\\sec\\finbert-tone")
+
