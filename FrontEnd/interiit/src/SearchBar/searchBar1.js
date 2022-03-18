@@ -14,6 +14,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import {CompanyContext} from "../CompanyData";
 import Card from "@mui/material/Card";
 import SearchIcon from "@mui/icons-material/Search";
 import CancelIcon from "@mui/icons-material/Cancel";
@@ -21,7 +22,7 @@ import AssessmentIcon from "@mui/icons-material/Assessment";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import axios from "axios";
 import DataRender from "./RenderDataList";
-export default function SearchBar() {
+export default function SearchBar({...props}) {
   const [searchCancel, setSearchCancel] = React.useState("search");
 
   const [searchCancel1, setSearchCancel1] = React.useState("search");
@@ -31,12 +32,7 @@ export default function SearchBar() {
   const [manageNotSure, setManageNotSure] = React.useState(false);
   const [dataWhenNotSure, setDataWhenNotSure] = React.useState(null);
   const [dataWhenSure, setDataWhenSure] = React.useState(null);
-  const [progressBar, setProgressBar] = React.useState(0);
-  function isNumeric(num) {
-    return !isNaN(num);
-  }
   async function HandleQueryWhenSure() {
-    console.log(searchQuery);
     try {
       let stringok = searchQuery;
       if (stringok) stringok = stringok.toUpperCase();
@@ -45,37 +41,31 @@ export default function SearchBar() {
       const response = await axios.get(
         `http://localhost:8000/api/strict/?q=${stringok}`
       );
-      console.log(response.data);
+      // console.log(response.data);
       setDataWhenSure(response.data);
     } catch (err) {
-      console.log("huehue", err);
+      // console.log("huehue", err);
     }
     if (searchCancel === "search") setSearchCancel("cancel");
-    else {setSearchCancel("search");
-  
+    else {
+      setSearchCancel("search");
+
       setDataWhenSure([]);
-  }
+    }
   }
   async function HandleQueryWhenNotSure() {
-    console.log(searchQueryNotSure);
+
+    // console.log(searchQueryNotSure);
+    // console.log("Context Clicked")
     try {
       let stringok = searchQueryNotSure;
       if (stringok) stringok = stringok.toUpperCase();
       else stringok = "";
       setSearchQueryNotSure(stringok);
       const response = await axios.get(
-        `http://localhost:8000/api/?q=${stringok}`,
-        {
-          onDownloadProgress: (progressEvent) => {
-            let percentCompleted = Math.floor(
-              (progressEvent.loaded / progressEvent.total) * 100
-            );
-            console.log("completed: ", percentCompleted);
-            setProgressBar(percentCompleted);
-          },
-        }
+        `http://localhost:8000/api/?q=${stringok}`
       );
-      console.log(response.data);
+      // console.log(response.data);
       setDataWhenNotSure(response.data);
     } catch (err) {
       console.log(err);
@@ -95,7 +85,7 @@ export default function SearchBar() {
             <Card className="OutSideCard">
               <div className="searchBar">
                 <Grid container className="TopGrid">
-                  <Grid item xs={12} sm={6} style={{ backgroundColor: "" }}>
+                  <Grid item xs={12} sm={6} style={{backgroundColor: ""}}>
                     <Grid
                       container
                       spacing={0}
@@ -117,9 +107,9 @@ export default function SearchBar() {
                             </Button>
                           </ListItem>
                         </Stack>
-                        <Stack sx={{ width: "100%", margin: "auto" }}>
+                        <Stack sx={{width: "100%", margin: "auto"}}>
                           <ListItem
-                            style={{ marginTop: "-13px", alignItems: "center" }}
+                            style={{marginTop: "-13px", alignItems: "center"}}
                           >
                             <Slide
                               direction="up"
@@ -174,10 +164,10 @@ export default function SearchBar() {
                       direction="column"
                       alignItems="center"
                       justifyContent="center"
-                      style={{ backgroundColor: "" }}
+                      style={{backgroundColor: ""}}
                     >
-                      <Grid item xs={3} style={{ backgroundColor: "" }}>
-                        <Stack style={{ margin: "auto", backgroundColor: "" }}>
+                      <Grid item xs={3} style={{backgroundColor: ""}}>
+                        <Stack style={{margin: "auto", backgroundColor: ""}}>
                           <ListItem>
                             <Button
                               variant="contained"
@@ -188,8 +178,8 @@ export default function SearchBar() {
                             </Button>
                           </ListItem>
                         </Stack>
-                        <Stack sx={{ width: "100%", margin: "auto" }}>
-                          <ListItem style={{ marginTop: "-13px" }}>
+                        <Stack sx={{width: "100%", margin: "auto"}}>
+                          <ListItem style={{marginTop: "-13px"}}>
                             <Slide
                               direction="up"
                               in={manageNotSure}
@@ -248,8 +238,8 @@ export default function SearchBar() {
               Details About Companies of which You knew ticker about
             </Typography>
             <div className="OutSideCard">
-              {console.log(searchCancel, searchCancel1, "searchCancels")}
-              <DataRender data={dataWhenSure} toggler={searchCancel} />
+              {/* {console.log(searchCancel, searchCancel1, "searchCancels")} */}
+              <DataRender func={props.x} data={dataWhenSure} toggler={searchCancel} />
             </div>
           </div>
         </ListItem>
@@ -259,8 +249,8 @@ export default function SearchBar() {
               Details About Companies of which You were unsure of
             </Typography>
             <div className="OutSideCard">
-              {console.log(searchCancel, searchCancel1, "searchCancels")}
-              <DataRender data={dataWhenNotSure} toggler={searchCancel1} />
+              {/* {console.log(searchCancel, searchCancel1, "searchCancels")} */}
+              <DataRender func={props.x} data={dataWhenNotSure} toggler={searchCancel1} />
             </div>
           </div>
         </ListItem>

@@ -3,10 +3,9 @@ import * as React from "react";
 import "./searchBar1.css";
 import CardWithData from "./SingleCard";
 import WowSuchEmpty from "../resources/reddit.png"
-export default function DataRender(props) {
+export default function DataRender({...props}) {
   const data = props.data ? props.data.data : null;
   React.useEffect(() => {}, [props]);
-  console.log(props);
   return (
     <div className="searchBar">
       <Grid
@@ -23,12 +22,12 @@ export default function DataRender(props) {
             alignItems="center"
             justifyContent="center"
           >
-            {console.log("toggleer : ",props.toggler)}
+            {/* {console.log("toggleer : ",props.toggler)} */}
             {data ? (
               data.map((elem,index) => (
                 <Zoom in={props.toggler==='cancel'} style={{transitionDelay:`${index}00ms`}}>
                   <Grid item xs={12} sm={6} md={4}>
-                    <CardWithData data={elem} />
+                    <CardWithData   data={elem}  />
                   </Grid>
                 </Zoom>
               ))
