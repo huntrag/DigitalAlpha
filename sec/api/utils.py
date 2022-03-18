@@ -2,15 +2,15 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 import pymongo
-from transformers import BertTokenizer, BertForSequenceClassification
+# from transformers import BertTokenizer, BertForSequenceClassification
 from sklearn.linear_model import LinearRegression
 from xml.etree import ElementTree as et
 import re
 import numpy as np
 
 
-finbert = BertForSequenceClassification.from_pretrained('sec\\finbert-tone',num_labels=3)
-tokenizer = BertTokenizer.from_pretrained('sec\\finbert-tone')
+# finbert = BertForSequenceClassification.from_pretrained('sec\\finbert-tone',num_labels=3)
+# tokenizer = BertTokenizer.from_pretrained('sec\\finbert-tone')
 
 # print(finbert.eval()) # Uncomment to Check for Model
 
@@ -21,56 +21,56 @@ def normalized(a, axis=-1, order=2):
     l2[l2==0] = 1
     return a / np.expand_dims(l2, axis)
 
-def getSentiment(cik,asc):
-    asc = asc.replace("-", "")
-    cik = str(cik)
-    base_url = "https://www.sec.gov/Archives/edgar/data/" + cik + "/" + asc
-    xml_tree = requests.get(base_url + "/FilingSummary.xml", headers=headers)
-    trigger_one = 'DISCLOSURE' # We will primarily look for these documents
-    trigger_list = ['ACCOUNTING', 'LEASES', 'DEBT','COMMITMENTS','STOCK',] # List of triggers to look for in each document name
-    resdata = {} #Dict to hold end results
-    root = et.fromstring(xml_tree.text) # Fetch XML ROOT
-    for report in root.iter('Report'):
-            for trigger_word in trigger_list:
-                #Check if the trigger words exists in the document name
-                partname = report.find('LongName').text
-                if (trigger_word.lower() in partname.lower() and trigger_one.lower() in partname.lower()):
-                    if ("table" in partname.lower() or "details" in partname.lower()):
-                        continue
-                    soup = BeautifulSoup(requests.get(base_url + '/' + report.find('HtmlFileName').text,headers=headers).text, 'lxml')
-                    # Fragment the stripped text into list of sentences
-                    txt_list_unrefined = re.split( r' *[\n\.\?!][\'"\)\]]* *' , soup.text.strip())
-                    # Remove short sequences
-                    txt_list = [ txt for txt in txt_list_unrefined if len(txt) > 100 ]
-                    # Encode The Sentence
-                    encoded_text = tokenizer(txt_list, return_tensors="pt", padding=True)
-                    # Predict the sentiment tensor
-                    sentiment_tensor = finbert(**encoded_text)[0].detach().numpy()
-                    # Get the non-zero sentiments
-                    refined_sentiment = [i for i in sentiment_tensor if np.argmax(i) != 0]
-                    #Run their average, if all sentiments are neutral, average those instead
-                    if refined_sentiment:
-                        average_sentiment = np.average( refined_sentiment, axis=0)
-                    else:
-                        average_sentiment = np.average( sentiment_tensor, axis=0)
-                    # do some modifications to the average sentiment
+# def getSentiment(cik,asc):
+#     asc = asc.replace("-", "")
+#     cik = str(cik)
+#     base_url = "https://www.sec.gov/Archives/edgar/data/" + cik + "/" + asc
+#     xml_tree = requests.get(base_url + "/FilingSummary.xml", headers=headers)
+#     trigger_one = 'DISCLOSURE' # We will primarily look for these documents
+#     trigger_list = ['ACCOUNTING', 'LEASES', 'DEBT','COMMITMENTS','STOCK',] # List of triggers to look for in each document name
+#     resdata = {} #Dict to hold end results
+#     root = et.fromstring(xml_tree.text) # Fetch XML ROOT
+#     for report in root.iter('Report'):
+#             for trigger_word in trigger_list:
+#                 #Check if the trigger words exists in the document name
+#                 partname = report.find('LongName').text
+#                 if (trigger_word.lower() in partname.lower() and trigger_one.lower() in partname.lower()):
+#                     if ("table" in partname.lower() or "details" in partname.lower()):
+#                         continue
+#                     soup = BeautifulSoup(requests.get(base_url + '/' + report.find('HtmlFileName').text,headers=headers).text, 'lxml')
+#                     # Fragment the stripped text into list of sentences
+#                     txt_list_unrefined = re.split( r' *[\n\.\?!][\'"\)\]]* *' , soup.text.strip())
+#                     # Remove short sequences
+#                     txt_list = [ txt for txt in txt_list_unrefined if len(txt) > 100 ]
+#                     # Encode The Sentence
+#                     encoded_text = tokenizer(txt_list, return_tensors="pt", padding=True)
+#                     # Predict the sentiment tensor
+#                     sentiment_tensor = finbert(**encoded_text)[0].detach().numpy()
+#                     # Get the non-zero sentiments
+#                     refined_sentiment = [i for i in sentiment_tensor if np.argmax(i) != 0]
+#                     #Run their average, if all sentiments are neutral, average those instead
+#                     if refined_sentiment:
+#                         average_sentiment = np.average( refined_sentiment, axis=0)
+#                     else:
+#                         average_sentiment = np.average( sentiment_tensor, axis=0)
+#                     # do some modifications to the average sentiment
 
-                    minval = np.min(average_sentiment)
+#                     minval = np.min(average_sentiment)
                     
-                    for i in range(3):
-                        average_sentiment[i] = (average_sentiment[i] - minval)
+#                     for i in range(3):
+#                         average_sentiment[i] = (average_sentiment[i] - minval)
 
-                    sumval = np.sum(average_sentiment)
-                    for i in range(3):
-                        average_sentiment[i] = average_sentiment[i]/sumval
-                    if average_sentiment[1] > 0.5:
-                        resdata[partname] = 'good'
-                    elif average_sentiment[2] > 0.5:
-                        resdata[partname] = 'bad'
-                    else:
-                        resdata[partname] = 'neutral'
-                    break
-    return resdata
+#                     sumval = np.sum(average_sentiment)
+#                     for i in range(3):
+#                         average_sentiment[i] = average_sentiment[i]/sumval
+#                     if average_sentiment[1] > 0.5:
+#                         resdata[partname] = 'good'
+#                     elif average_sentiment[2] > 0.5:
+#                         resdata[partname] = 'bad'
+#                     else:
+#                         resdata[partname] = 'neutral'
+#                     break
+#     return resdata
 
 def fetchCompanyMetrics(cik,startDate,endDate):
     '''
@@ -152,10 +152,8 @@ def getMLR(series,inp_dim,out_length):
 
     return out
 
-
 #function to convert dataframes to json
-#newfile is dataframe assuming column names are the keys
-def convertToJson(newfile):  
+def convertToJson(newfile):  #newfile is dataframe assuming column names are the keys
     res=[]
     mapping=[]
     for r in newfile:
@@ -166,8 +164,7 @@ def convertToJson(newfile):
             dic[keys]=newfile.iloc[i][keys]
         res.append(dic)
     return res
-
-
+    
 # print(getSentiment(1342936,"0001342936-12-000012"))
 
 # CDK = fetchCompanyMetrics(796343,"1800-00-00","2023-00-00")
@@ -180,4 +177,3 @@ def convertToJson(newfile):
 CDK = generateDF(796343,1,"1800-00-00","2023-00-00")
 newfile = pd.DataFrame.from_dict(CDK)
 newfile.to_csv("CDK.csv")
-

@@ -1,10 +1,11 @@
 import asyncio
 from django.shortcuts import render
 from . import utils
+import pandas as pd
 import sys
 import json
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, QueryDict
 from django.views.decorators.csrf import csrf_exempt
 import pymongo
 from dotenv import load_dotenv
@@ -63,17 +64,18 @@ def getBS(request):
         raw = json.loads(request.body)
         # print(raw['ticker'])
         # data=raw['data']
-        db=list(db_form.find({'date': {"$gte": raw['date']}, 'cik': int(raw['cik'])},{'date':1,'data':1,'_id':0}))
-
-        ans=[]
-
-        for r in db:
-            d=r['data']
-            d['date']=r['date']
-            year=r['date'].split('-')[0]
-            d['year']=year
-            ans.append(d)
         
+        # ans=[]
+
+        # for r in db:
+        #     d=r['data']
+        #     d['date']=r['date']
+        #     year=r['date'].split('-')[0]
+        #     d['year']=year
+        #     ans.append(d)
+        CDK=(utils.generateDF(raw['cik'],2,raw['date'],"2023-00-00"))
+        newfile = pd.DataFrame.from_dict(CDK)
+        ans=utils.convertToJson(newfile)
         # data = db_form.find({'ticker': raw['ticker']})
         return JsonResponse(parse_json({'status': 'success', 'data': ans}),status=200)
     except:
@@ -93,3 +95,30 @@ def getId(request, pk):
     except:
         return JsonResponse(parse_json({'status': 'fail'}),status=404)
 
+
+def compare(request):
+    body = json.loads(request.body)
+    # request body of the form:
+    # {
+    #     ticker1: existing one 
+    #     ticker2: query 'MSFT'
+    #     date: from for eg '2018-01-01'
+    # } 
+
+    db1=list(db_form.find({'date': {"$gte": body['date']}, 'ticker': int(body['ticker1'])},{'date':1,'data':1,'_id':0}))
+    ans1=[]
+    for r in db1:
+        d=r['data']
+        d['date']=r['date']
+        year=r['date'].split('-')[0]
+        d['year']=year
+        ans1.append(d)
+
+    db2=list(db_form.find({'date': {"$gte": body['date']}, 'ticker': int(body['ticker2'])},{'date':1,'data':1,'_id':0}))
+    ans1=[]
+    for r in db2:
+        d=r['data']
+        d['date']=r['date']
+        year=r['date'].split('-')[0]
+        d['year']=year
+        ans1.append(d)
