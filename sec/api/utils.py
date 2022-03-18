@@ -87,7 +87,7 @@ def fetchCompanyMetrics(cik,startDate,endDate):
             {"date": {"$lte": endDate}}
         ]
     }
-    docs = form_data.find(find_q)
+    docs = form_data.find(find_q).sort('date',1)
     sample_10q = form_data.find_one({"cik": cik, "form": "10-Q"}) #To get common attribs
 
     resdata = {}
@@ -116,7 +116,14 @@ def generateDF(cik,nval,startDate,endDate = "2024-01-01"):
     finaldict = {}
     for col in datdf.columns:
         if col == 'date':
-            finaldict[col] = datdf[col][-nval:].values.tolist()
+            finaldict[col] = []
+            for q in range(nval):
+                try:
+                    finaldict[col].append( str(int(datdf['date'].iloc[-4+q][:4])+1)+"-"+str(datdf['date'].iloc[-4+q][5:]) )
+                    print(finaldict[col])
+                except:
+                    print("Insufficient Values, cannot predict")
+                    break
             continue
         init = [ x for x in datdf[col] if  not pd.isnull(x) ]
         finaldict[col] = getMLR(init,int(len(init)/6),nval)
