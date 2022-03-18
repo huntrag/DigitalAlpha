@@ -2,9 +2,6 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import { Chart } from "react-google-charts";
 import { CardContent } from "@mui/material";
-import Swiper from "react-id-swiper";
-import { Paper, Button } from "@mui/material";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Caros from "./caros"
 
 export default function GraphCard({ ...props }) {
@@ -85,8 +82,8 @@ export default function GraphCard({ ...props }) {
     );
   }
   return (
-    <Card sx={{ maxWidth: 600 }}>
-      <CardContent style={{ paddingTop: "20px" }}>
+    <Card sx={{ maxWidth: 600 , paddingTop:"20px" }}>
+      <CardContent style={{ paddingTop: "2px" }}>
         {/* {FinalArr ? FinalArr.map(callBack) : <></>} */}
         {/* {console.log(FinalArr[2][0][1],"title")} */}
         {FinalArr ? (

@@ -1,6 +1,17 @@
 import * as React from "react";
 import {useLocation} from "react-router-dom";
-import {Button, Card, Collapse, Grid, TextField} from "@mui/material";
+import fallBackImage from "../resources/MicrosoftTeams-image.png";
+import {
+  IconButton,
+  Button,
+  Card,
+  Collapse,
+  Grid,
+  TextField,
+  CardHeader,
+  Avatar,
+} from "@mui/material";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 import Appbar from "../AppBar/index";
@@ -12,7 +23,7 @@ import GraphCard from "./DashBoard1";
 import "moment-timezone";
 import axios from "axios";
 export default function DashBoard() {
-  const [GraphData, setGraphData] = React.useState(null)
+  const [GraphData, setGraphData] = React.useState(null);
   const {state} = useLocation();
   const {data} = state;
   const [expanded, setExpanded] = React.useState(false);
@@ -34,7 +45,7 @@ export default function DashBoard() {
   //    }
 
   async function showAllGraphs() {
-    setFinalExpandedForCharts(!FinalExpandedForCharts)
+    setFinalExpandedForCharts(!FinalExpandedForCharts);
     let date = convert(value.toString());
     setValue(date);
     const sendObj = {
@@ -48,13 +59,24 @@ export default function DashBoard() {
       const response = await axios.get(
         `http://127.0.0.1:8000/api/bs?q1=${sendObj.cik}&q2=${date}`
       );
-      console.log(response.data,"res");
+      console.log(response.data, "res");
       setGraphData(response.data);
-
     } catch (error) {
       console.log(error);
     }
   }
+  console.log(data, "just before url")
+  const [url, setUrl] = React.useState(
+    `https://eodhistoricaldata.com/img/logos/US/${data.ticker}.png`
+  );
+
+  const errorHandlerForImageLink = (e) => {
+    setUrl(fallBackImage);
+    // console.log(url);
+    e.target.src = fallBackImage
+    console.log("Image Error")
+  };
+  React.useEffect(() => {}, [url])
   return (
     <>
       <LocalizationProvider dateAdapter={DateAdapter}>
@@ -73,9 +95,23 @@ export default function DashBoard() {
               alignItems="center"
               columnSpacing={1}
               justifyContent="center"
+              style={{paddingTop: "40px"}}
             >
-              <Grid item xs={12} sm={12} md={6}>
-                <Card sx={{maxWidth: 645}}>
+              <Grid item xs={12} sm={12} md={6} style={{}}>
+                <Card sx={{maxWidth: 645, paddingTop: "20px"}}>
+                  <CardHeader
+                    action={
+                      <IconButton aria-label="settings" sx={{heigh: 200, width: 200}} >
+                        <Avatar
+                          src={url}
+                          sx={{height: 100, width: 100}}
+                          imgProps={{onError: errorHandlerForImageLink}}
+                        />
+                      </IconButton>
+                    }
+                    title={data.title}
+                    subheader={data.ticker}
+                  />
                   <DetailList data={data} />
                   <Button
                     onClick={() => {
@@ -131,9 +167,16 @@ export default function DashBoard() {
                           style={{marginBottom: "22px"}}
                           onClick={showAllGraphs}
                         >
-                          {!FinalExpandedForCharts ? `See Graphs` : `Unsee Graphs`}
+                          {!FinalExpandedForCharts
+                            ? `See Graphs`
+                            : `Unsee Graphs`}
                         </Button>
-                        <Collapse in={FinalExpandedForCharts} style={{width: "800px"}} timeout="auto" unmountOnExit>
+                        <Collapse
+                          in={FinalExpandedForCharts}
+                          style={{width: "800px"}}
+                          timeout="auto"
+                          unmountOnExit
+                        >
                           <GraphCard data={GraphData} />
                         </Collapse>
                       </Grid>
