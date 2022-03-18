@@ -145,7 +145,22 @@ def getMLR(series,inp_dim,out_length):
 
     return out
 
-    
+
+#function to convert dataframes to json
+#newfile is dataframe assuming column names are the keys
+def convertToJson(newfile):  
+    res=[]
+    mapping=[]
+    for r in newfile:
+        mapping.append(r)
+    for i in range(newfile.shape[0]):
+        dic={}
+        for keys in mapping:
+            dic[keys]=newfile.iloc[i][keys]
+        res.append(dic)
+    return res
+
+
 # print(getSentiment(1342936,"0001342936-12-000012"))
 
 # CDK = fetchCompanyMetrics(796343,"1800-00-00","2023-00-00")
