@@ -126,6 +126,7 @@ def generateDF(cik,nval,startDate,endDate = "2024-01-01"):
                     break
             continue
         init = [ x for x in datdf[col] if  not pd.isnull(x) ]
+        datdf[col] = datdf[col].fillna(0)
         finaldict[col] = getMLR(init,int(len(init)/6),nval)
     outdf = pd.DataFrame.from_dict(finaldict)
     datdf = pd.concat([datdf,outdf],ignore_index=True)
