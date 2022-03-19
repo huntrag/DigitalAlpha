@@ -7,8 +7,68 @@ from xml.etree import ElementTree as et
 load_dotenv()
 MONGODB_URI = os.environ['MONGODB_URI']
 import numpy as np
+import sys
+import subprocess
 headers={'user-agent':'Mozilla/5.0 (X11; Fedora; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36'}
+try:
+    import tensorflow as tf
+except:
+    subprocess.check_call([sys.executable, '-m','pip', 'install', 'tensorflow'])
+    import tensorflow as tf
 
+def xy_data(dataset):
+    X_train=[]
+    y_train=[]
+    T = 5
+    for t in range(len(dataset)-T):
+        X_train.append(dataset[t:t+T])
+        y_train.append(dataset[t+T])
+    return X_train,y_train
+
+def create_model(X_train,y_train):
+    X_train = np.array(X_train).reshape(-1,5,1)
+    y_train = np.array(y_train)
+    # print(X_train.shape)
+    model = tf.keras.Sequential()
+    model.add(tf.keras.layers.LSTM(5))
+    model.add(tf.keras.layers.Dense(1,activation = 'relu'))
+    model.compile(loss='mse',optimizer = tf.keras.optimizers.Adam(learning_rate=0.05))
+    callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss',mode='min',patience=20,restore_best_weights=True)
+    n = list(X_train.shape)[0]
+    model.fit(X_train[int(0.2*n):],y_train[int(0.2*n):],epochs=200,validation_data=(X_train[:int(0.2*n)],y_train[:int(0.2*n)]),steps_per_epoch=5,callbacks=[callback])
+    return model
+    
+def predict(model,X):
+    pred = []
+    for _ in range(12):
+        # print(X[-5:])
+        data = np.array(X[-5:]).reshape(1,5,1)
+        # print(data.shape)
+        p = float(model.predict(data))
+        X.append(p)
+        pred.append(p)
+    return pred
+    
+def get_pred(Ticker,dataset):
+    ind = list(dataset['Ticker']).index(Ticker) 
+    X_train,y_train = xy_data(list(dataset.transpose()[ind])[1:])
+    model = create_model(X_train,y_train)
+    predict_year = predict(model,list(dataset.transpose()[ind])[1:])
+    return predict_year
+
+def get_dict(preds):
+    y=2022
+    m=4
+    dates = {}
+    for i in range(12):
+        dates[f'{y}-{m}-01'] = preds[i]
+        if m==12:
+            m = 1
+            y +=1
+        else:
+            m+=1
+    return dates
+    
 def normalized(a, axis=-1, order=2):
     l2 = np.atleast_1d(np.linalg.norm(a, order, axis))
     l2[l2==0] = 1

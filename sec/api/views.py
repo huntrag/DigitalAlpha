@@ -8,6 +8,9 @@ import os
 import json
 from bson.objectid import ObjectId
 from bson import json_util
+import sys
+import subprocess
+
 load_dotenv()
 MONGODB_URI = os.environ['MONGODB_URI']
 
@@ -35,6 +38,36 @@ def getAll(request):
         return JsonResponse(parse_json({'status': 'success', 'data': data}),status=200)
     except:
         return JsonResponse(parse_json({'status': 'fail'}),status=404)
+
+def getPred(request):
+    try:       
+        # implement pip as a subprocess:
+        
+        subprocess.check_call([sys.executable, '-m','pip', 'install', 
+        'tensorflow'])
+        print(os.listdir())
+        stockdata = pd.read_csv("./api/stockdatawith0.csv")
+        flag=True
+        x=0
+        while flag:
+            try:
+                x+=1
+                preds = utils.get_pred('adbe',stockdata)
+                return JsonResponse(parse_json({'status': 'success', 'data': preds}),status=200)
+            except:
+
+                preds=[]
+                return JsonResponse(parse_json({'status': 'fail', 'data': preds}),status=404)
+                print('Ticker not found')
+            if int(preds[0])!=0:
+                flag=False
+            if x>5:
+                flag=False
+                
+    except:
+        print('Not Proper')
+        return JsonResponse(parse_json({'status': 'fail'}),status=404)
+
 
 def getStrict(request):
     try:
