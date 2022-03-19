@@ -31,22 +31,14 @@ In this Project, we shall be looking into utilizing the [EDGAR](https://www.sec.
   - the frontend must be now up and running at **127.0.0.1:3000**
   - fire up the browser and go to `127:0.0.1:3000/search` to now search for companies and see the results for yourselves
 
-## Website Structure
-
-The site has a la
-
 ## Shipped Features
 
 Features that are shipped and ready to use are
 
 - **Seach:** Search for companies and see the results
-  - ![img1]('https://i.imgur.com/qZQZQZQ.png')
 - **Company Details:** See the details of a company
-  - ![img1]('https://i.imgur.com/qZQZQZQ.png')
 - **Charts:** See the financial charts of a company
-  - ![img1]('https://i.imgur.com/qZQZQZQ.png')
 - **Stock:** Common Stock Price of the company of last 5 years.
-  - ![img1]('https://i.imgur.com/qZQZQZQ.png')
 
 ## Beta Features
 
@@ -55,12 +47,34 @@ Some features currently in beta are:
 - **Document Sentiment Analysis:** Sentiment Analysis of the documents. Ref to `scripts/sentiment-analysis.ipynb`
 - **Deep Learning Model for Stock Prediction:** Sentiment Analysis of the company. Ref to `scripts/stockPred.ipynb`.
 
-## Objectives
+## Deep Learning Models
+
+### Two Models were used here:
+
+- **finBERT**: It is a BERT Variation trained specifically on financial statements. Here we feed the entire data of the 10K section wise to get the sentiment of each section like TAXES, DEBTS and STOCKS
+  - ![BERT](https://miro.medium.com/max/1400/1*Fqcnq-Nf2JgdQ1MJIrE0Gg.png)
+- **LSTM**: It is a Sequential model based on one lstm layer and a final output node using relu as activation
+  - ![LSTM](https://upload.wikimedia.org/wikipedia/commons/5/53/Peephole_Long_Short-Term_Memory.svg)
+
+## Total Objectives
 
 - Scrape Data from the company's History since inception
-- Use 10-Q 10-K and 8-K filings to get the company's financial statements
+- Use 10-Q 10-K and 8-K filings to get the company's financial sentiments
 - Use Financial Statements to get the company's balance sheet, income statement, cash flow statement, and ratios
 - Use the data to get the company's current assets, liabilities, and equity
 - Generate SaaS Metrics
 - Generate a Financial Statement Analysis
 - Use the metrics with Deep Learning Systems to give Insightful Results
+
+## Completed Objectives
+
+- Scrape Data from the company's History since inception
+- Use Financial Statements to get the company's balance sheet, income statement, cash flow statement, and ratios
+- Use the data to get the company's current assets, liabilities, and equity
+- Generate a Financial Statement Analysis
+- Use the metrics with Deep Learning Systems to give Insightful Results
+
+## Future Goals
+
+- Generate SaaS Metrics
+- Use 10-Q 10-K and 8-K filings to get the company's financial sentiments
