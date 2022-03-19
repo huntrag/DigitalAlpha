@@ -40,13 +40,13 @@ The site has a la
 Features that are shipped and ready to use are
 
 - **Seach:** Search for companies and see the results
-  - ![img1]('https://i.imgur.com/qZQZQZQ.png')
+  - ![img1](https://raw.githubusercontent.com/Inter-IIT/DigitalAlpha/Backend/docs/img/s1.jpg?token=GHSAT0AAAAAABQ5PJ4YR2PGJWOVUVLTDBQSYRV7J6A)
 - **Company Details:** See the details of a company
-  - ![img1]('https://i.imgur.com/qZQZQZQ.png')
+  - ![img1](https://raw.githubusercontent.com/Inter-IIT/DigitalAlpha/Backend/docs/img/s5.jpg?token=GHSAT0AAAAAABQ5PJ4Y2PI4CV7CN3BKV7MIYRV7MEQ)
 - **Charts:** See the financial charts of a company
-  - ![img1]('https://i.imgur.com/qZQZQZQ.png')
+  - ![img1](https://raw.githubusercontent.com/Inter-IIT/DigitalAlpha/Backend/docs/img/s7.jpg?token=GHSAT0AAAAAABQ5PJ4Z5UMQNEFMVBHYSKWAYRV7M6A)
 - **Stock:** Common Stock Price of the company of last 5 years.
-  - ![img1]('https://i.imgur.com/qZQZQZQ.png')
+  - ![img1](https://raw.githubusercontent.com/Inter-IIT/DigitalAlpha/Backend/docs/img/s6.jpg?token=GHSAT0AAAAAABQ5PJ4Z3RCXLMNNYRCKB6NAYRV7N2A)
 
 ## Beta Features
 
