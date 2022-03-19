@@ -1,13 +1,13 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-import { Chart } from "react-google-charts";
-import { CardContent } from "@mui/material";
+import {Chart} from "react-google-charts";
+import {CardContent} from "@mui/material";
 import Caros from "./caros"
 
-export default function GraphCard({ ...props }) {
+export default function GraphCard({...props}) {
   const [Graph, SetGraph] = React.useState([]);
   let datax = props;
-  console.log(datax, Graph, "Graphical Data");
+  // console.log(datax, Graph, "Graphical Data");
   React.useEffect(() => {
     if (datax.data) SetGraph(datax.data.data);
     datax = props;
@@ -16,7 +16,7 @@ export default function GraphCard({ ...props }) {
   let FinalArr = [];
   React.useEffect(() => {}, [FinalArr, Chart]);
   ProcessData();
-  console.log(FinalArr, "Allright");
+  // console.log(FinalArr, "Allright");
   function ProcessData() {
     for (let elem of Graph) {
       let arr1 = Object.keys(elem);
@@ -24,7 +24,7 @@ export default function GraphCard({ ...props }) {
       if (!FinalArr.length) FinalArr.push(arr1);
       FinalArr.push(arr2);
     }
-    console.log(FinalArr, "BeforeComplex");
+    // console.log(FinalArr, "BeforeComplex");
     function isObject(obj) {
       return obj === Object(obj);
     }
@@ -41,7 +41,8 @@ export default function GraphCard({ ...props }) {
       for (let stepDaughter of FinalArr) {
         stepMom.push(stepDaughter[0]);
         stepMom.push(stepDaughter[i]);
-        stepDaughterx.push(stepMom);
+        if (stepDaughter[i] != 0)
+          stepDaughterx.push(stepMom);
         stepMom = [];
       }
       i += 1;
@@ -50,7 +51,7 @@ export default function GraphCard({ ...props }) {
     }
     return Daddy;
   }
-  console.log(FinalArr, "Finally!!!!!");
+  // console.log(FinalArr, "Finally!!!!!");
   // console.log();
   const data = [
     ["Date", "Value"],
@@ -62,10 +63,10 @@ export default function GraphCard({ ...props }) {
   const options = {
     title: "Company Performance",
     curveType: "function",
-    legend: { position: "bottom" },
+    legend: {position: "bottom"},
   };
   function callBack(elem) {
-    console.log(elem, "huehuehe");
+    // console.log(elem, "huehuehe");
     return (
       <Chart
         chartType="Line"
@@ -75,19 +76,19 @@ export default function GraphCard({ ...props }) {
           title: elem[0][1],
           curveType: "function",
           height: "2000px",
-          legend: { position: "bottom" },
+          legend: {position: "bottom"},
           interpolateNulls: true,
         }}
       />
     );
   }
   return (
-    <Card sx={{ maxWidth: 600 , paddingTop:"20px" }}>
-      <CardContent style={{ paddingTop: "2px" }}>
+    <Card sx={{maxWidth: 600, paddingTop: "20px"}}>
+      <CardContent style={{paddingTop: "2px"}}>
         {/* {FinalArr ? FinalArr.map(callBack) : <></>} */}
         {/* {console.log(FinalArr[2][0][1],"title")} */}
         {FinalArr ? (
-          <div style={{ paddingBottom: "20px" }}>
+          <div style={{paddingBottom: "20px"}}>
             {/* <Carousel
               NextIcon={<NavigateNextIcon />}
               sx={{
@@ -97,7 +98,7 @@ export default function GraphCard({ ...props }) {
                 backgroundColor: "",
               }}
             > */}
-            <Caros data={FinalArr}/>
+            <Caros data={FinalArr} />
             {/* <Swiper>
               {FinalArr.map((element, index) => (
                 <div>

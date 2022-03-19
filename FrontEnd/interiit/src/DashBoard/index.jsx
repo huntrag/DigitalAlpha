@@ -1,6 +1,8 @@
 import * as React from "react";
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import fallBackImage from "../resources/MicrosoftTeams-image.png";
+
+import { Chart } from "react-google-charts";
 import {
   IconButton,
   Button,
@@ -11,21 +13,20 @@ import {
   CardHeader,
   Avatar,
 } from "@mui/material";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 import Appbar from "../AppBar/index";
 import DetailList from "./ListDetail";
 import ComplexData from "./Table";
 import DateAdapter from "@mui/lab/AdapterDateFns";
-import Moment from "react-moment";
 import GraphCard from "./DashBoard1";
 import "moment-timezone";
 import axios from "axios";
 export default function DashBoard() {
+  const [Stonks, SetStonks] = React.useState(null);
   const [GraphData, setGraphData] = React.useState(null);
-  const {state} = useLocation();
-  const {data} = state;
+  const { state } = useLocation();
+  const { data } = state;
   const [expanded, setExpanded] = React.useState(false);
   const [value, setValue] = React.useState(Date());
   const [expandedForChart, setExpanedForChart] = React.useState(false);
@@ -59,13 +60,13 @@ export default function DashBoard() {
       const response = await axios.get(
         `http://127.0.0.1:8000/api/bs?q1=${sendObj.cik}&q2=${date}`
       );
-      console.log(response.data, "res");
+      // console.log(response.data, "res");
       setGraphData(response.data);
     } catch (error) {
       console.log(error);
     }
   }
-  console.log(data, "just before url")
+  // console.log(data, "just before url")
   const [url, setUrl] = React.useState(
     `https://eodhistoricaldata.com/img/logos/US/${data.ticker}.png`
   );
@@ -73,10 +74,47 @@ export default function DashBoard() {
   const errorHandlerForImageLink = (e) => {
     setUrl(fallBackImage);
     // console.log(url);
-    e.target.src = fallBackImage
-    console.log("Image Error")
+    e.target.src = fallBackImage;
+    // console.log("Image Error")
   };
-  React.useEffect(() => {}, [url])
+  React.useEffect(() => {}, [url]);
+
+  let ayo = [];
+  React.useEffect(() => {
+    async function GetStonks() {
+      let ayo1 = [];
+      try {
+        const finalData = await axios.get(
+          `http://127.0.0.1:8000/api/stock?q=${data.ticker}`
+        );
+        console.log(finalData.data.data);
+        SetStonks(finalData.data.data);
+        let arr = finalData.data.data;
+        let arr1 = Object.keys(arr);
+        let arr2 = Object.values(arr);
+        for (let index in arr1) {
+          let dk = [];
+          if (index !== '0') {
+            // console.log(index,"index")
+            dk.push(arr1[index]);
+            dk.push(arr2[index]);
+            // dk.push(arr1[index]);
+            // dk.push(arr2[index]);
+          }
+         if(dk.length) 
+          ayo1.push(dk);
+          dk = [];
+        }
+        SetStonks(ayo1);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    GetStonks();
+    console.log("Page Loaded");
+  }, []);
+
+  console.log(ayo, "alright");
   return (
     <>
       <LocalizationProvider dateAdapter={DateAdapter}>
@@ -95,17 +133,20 @@ export default function DashBoard() {
               alignItems="center"
               columnSpacing={1}
               justifyContent="center"
-              style={{paddingTop: "40px"}}
+              style={{ paddingTop: "40px" }}
             >
               <Grid item xs={12} sm={12} md={6} style={{}}>
-                <Card sx={{maxWidth: 645, paddingTop: "20px"}}>
+                <Card sx={{ maxWidth: 645, paddingTop: "20px" }}>
                   <CardHeader
                     action={
-                      <IconButton aria-label="settings" sx={{heigh: 200, width: 200}} >
+                      <IconButton
+                        aria-label="settings"
+                        sx={{ heigh: 200, width: 200 }}
+                      >
                         <Avatar
                           src={url}
-                          sx={{height: 100, width: 100}}
-                          imgProps={{onError: errorHandlerForImageLink}}
+                          sx={{ height: 100, width: 100 }}
+                          imgProps={{ onError: errorHandlerForImageLink }}
                         />
                       </IconButton>
                     }
@@ -124,6 +165,31 @@ export default function DashBoard() {
                   </Button>
                   <Collapse in={expanded} timeout="auto" unmountOnExit>
                     <ComplexData data={data} />
+                    <Grid
+                      container
+                      spacing={0}
+                      direction="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Grid item xs={3}>
+                        {console.log(Stonks)}
+                        {Stonks?
+                        <Chart
+                          chartType="LineChart"
+                          data={Stonks}
+                          style={{ paddingTop: "20px" }}
+                          options={{
+                            title: `Stock Graph`,
+
+                            curveType: "function",
+                            height: "200px",
+                            legend: { position: "bottom" },
+                            interpolateNulls: true,
+                          }}
+                        />:null}
+                      </Grid>
+                    </Grid>
                   </Collapse>
                   <Button
                     onClick={() => {
@@ -164,7 +230,7 @@ export default function DashBoard() {
 
                       <Grid item xs={3}>
                         <Button
-                          style={{marginBottom: "22px"}}
+                          style={{ marginBottom: "22px" }}
                           onClick={showAllGraphs}
                         >
                           {!FinalExpandedForCharts
@@ -173,7 +239,7 @@ export default function DashBoard() {
                         </Button>
                         <Collapse
                           in={FinalExpandedForCharts}
-                          style={{width: "800px"}}
+                          style={{ width: "800px" }}
                           timeout="auto"
                           unmountOnExit
                         >
@@ -185,7 +251,7 @@ export default function DashBoard() {
                 </Card>
               </Grid>
               <Grid item xs={12} sm={12} md={6}>
-                <Card sx={{maxWidth: 645}}>
+                <Card sx={{ maxWidth: 645 }}>
                   <DetailList data={data} />
                   <Button
                     onClick={() => {

@@ -14,15 +14,18 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import {CompanyContext} from "../CompanyData";
+import WowSuchEmpty from "../resources/reddit.png";
+import { CompanyContext } from "../CompanyData";
 import Card from "@mui/material/Card";
+import { Zoom } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import CancelIcon from "@mui/icons-material/Cancel";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import axios from "axios";
+import SingleCard from "./SingleCard";
 import DataRender from "./RenderDataList";
-export default function SearchBar({...props}) {
+export default function SearchBar({ ...props }) {
   const [searchCancel, setSearchCancel] = React.useState("search");
 
   const [searchCancel1, setSearchCancel1] = React.useState("search");
@@ -39,7 +42,7 @@ export default function SearchBar({...props}) {
       else stringok = "";
       setSearchQuery(stringok);
       const response = await axios.get(
-        `http://localhost:8000/api/strict/?q=${stringok}`
+        `http://127.0.0.1:8000/api/strict?q=${stringok}`
       );
       // console.log(response.data);
       setDataWhenSure(response.data);
@@ -54,7 +57,6 @@ export default function SearchBar({...props}) {
     }
   }
   async function HandleQueryWhenNotSure() {
-
     // console.log(searchQueryNotSure);
     // console.log("Context Clicked")
     try {
@@ -85,7 +87,7 @@ export default function SearchBar({...props}) {
             <Card className="OutSideCard">
               <div className="searchBar">
                 <Grid container className="TopGrid">
-                  <Grid item xs={12} sm={6} style={{backgroundColor: ""}}>
+                  <Grid item xs={12} sm={6} style={{ backgroundColor: "" }}>
                     <Grid
                       container
                       spacing={0}
@@ -107,9 +109,9 @@ export default function SearchBar({...props}) {
                             </Button>
                           </ListItem>
                         </Stack>
-                        <Stack sx={{width: "100%", margin: "auto"}}>
+                        <Stack sx={{ width: "100%", margin: "auto" }}>
                           <ListItem
-                            style={{marginTop: "-13px", alignItems: "center"}}
+                            style={{ marginTop: "-13px", alignItems: "center" }}
                           >
                             <Slide
                               direction="up"
@@ -164,10 +166,10 @@ export default function SearchBar({...props}) {
                       direction="column"
                       alignItems="center"
                       justifyContent="center"
-                      style={{backgroundColor: ""}}
+                      style={{ backgroundColor: "" }}
                     >
-                      <Grid item xs={3} style={{backgroundColor: ""}}>
-                        <Stack style={{margin: "auto", backgroundColor: ""}}>
+                      <Grid item xs={3} style={{ backgroundColor: "" }}>
+                        <Stack style={{ margin: "auto", backgroundColor: "" }}>
                           <ListItem>
                             <Button
                               variant="contained"
@@ -178,8 +180,8 @@ export default function SearchBar({...props}) {
                             </Button>
                           </ListItem>
                         </Stack>
-                        <Stack sx={{width: "100%", margin: "auto"}}>
-                          <ListItem style={{marginTop: "-13px"}}>
+                        <Stack sx={{ width: "100%", margin: "auto" }}>
+                          <ListItem style={{ marginTop: "-13px" }}>
                             <Slide
                               direction="up"
                               in={manageNotSure}
@@ -239,7 +241,47 @@ export default function SearchBar({...props}) {
             </Typography>
             <div className="OutSideCard">
               {/* {console.log(searchCancel, searchCancel1, "searchCancels")} */}
-              <DataRender func={props.x} data={dataWhenSure} toggler={searchCancel} />
+              {/* <DataRender func={props.x} data={dataWhenSure} toggler={searchCancel} check={`SingleData`} /> */}
+              {console.log(dataWhenSure, "OK")}
+              {dataWhenSure ? (
+                <Zoom
+                  in={searchCancel === "cancel"}
+                  style={{ transitionDelay: `${1}00ms` }}
+                >
+                  <Grid
+                    container
+                    spacing={0}
+                    direction="column"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Grid item xs={3} style={{ backgroundColor: "" }}>
+                      <SingleCard data={dataWhenSure.data} />
+                    </Grid>
+                  </Grid>
+                </Zoom>
+              ) : (
+                <Grid
+                  container
+                  spacing={0}
+                  direction="column"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Grid item xs={3} style={{ backgroundColor: "" }}>
+                    <Grid
+                      container
+                      spacing={12}
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Grid item xs={12} sm={12} md={12}>
+                        <img src={WowSuchEmpty} alt="ok" />
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              )}
             </div>
           </div>
         </ListItem>
@@ -250,7 +292,12 @@ export default function SearchBar({...props}) {
             </Typography>
             <div className="OutSideCard">
               {/* {console.log(searchCancel, searchCancel1, "searchCancels")} */}
-              <DataRender func={props.x} data={dataWhenNotSure} toggler={searchCancel1} />
+              <DataRender
+                func={props.x}
+                data={dataWhenNotSure}
+                toggler={searchCancel1}
+                check={`MultipleData`}
+              />
             </div>
           </div>
         </ListItem>
