@@ -55,6 +55,14 @@ Some features currently in beta are:
 - **Document Sentiment Analysis:** Sentiment Analysis of the documents. Ref to `scripts/sentiment-analysis.ipynb`
 - **Deep Learning Model for Stock Prediction:** Sentiment Analysis of the company. Ref to `scripts/stockPred.ipynb`.
 
+## Deep Learning Models
+
+### Two Models were used here:
+
+- **finBERT**: It is a BERT Variation trained specifically on financial statements. Here we feed the entire data of the 10K section wise to get the sentiment of each section like TAXES, DEBTS and STOCKS
+  - ![BERT](https://miro.medium.com/max/1400/1*Fqcnq-Nf2JgdQ1MJIrE0Gg.png)
+- **LSTM + Sequential**: 
+
 ## Total Objectives
 
 - Scrape Data from the company's History since inception
