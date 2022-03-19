@@ -24,7 +24,7 @@ def normalized(a, axis=-1, order=2):
 # def getSentiment(cik,asc):
 #     asc = asc.replace("-", "")
 #     cik = str(cik)
-#     base_url = "https://www.sec.gov/Archives/edgar/data/" + cik + "/" + asc
+#     base_url = "https://www.sec.gov/Archives/edgar/data/" + str(cik) + "/" + str(asc).replace("-", "")
 #     xml_tree = requests.get(base_url + "/FilingSummary.xml", headers=headers)
 #     trigger_one = 'DISCLOSURE' # We will primarily look for these documents
 #     trigger_list = ['ACCOUNTING', 'LEASES', 'DEBT','COMMITMENTS','STOCK',] # List of triggers to look for in each document name
