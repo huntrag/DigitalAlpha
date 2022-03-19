@@ -31,22 +31,14 @@ In this Project, we shall be looking into utilizing the [EDGAR](https://www.sec.
   - the frontend must be now up and running at **127.0.0.1:3000**
   - fire up the browser and go to `127:0.0.1:3000/search` to now search for companies and see the results for yourselves
 
-## Website Structure
-
-The site has a la
-
 ## Shipped Features
 
 Features that are shipped and ready to use are
 
 - **Seach:** Search for companies and see the results
-  - ![img1](https://raw.githubusercontent.com/Inter-IIT/DigitalAlpha/Backend/docs/img/s1.jpg?token=GHSAT0AAAAAABQ5PJ4YR3K3AJJVK3WZSONMYRV7SCA)
 - **Company Details:** See the details of a company
-  - ![img1](https://raw.githubusercontent.com/Inter-IIT/DigitalAlpha/Backend/docs/img/s5.jpg?token=GHSAT0AAAAAABQ5PJ4Y2PI4CV7CN3BKV7MIYRV7MEQ)
 - **Charts:** See the financial charts of a company
-  - ![img1](https://raw.githubusercontent.com/Inter-IIT/DigitalAlpha/Backend/docs/img/s7.jpg?token=GHSAT0AAAAAABQ5PJ4Z5UMQNEFMVBHYSKWAYRV7M6A)
 - **Stock:** Common Stock Price of the company of last 5 years.
-  - ![img1](https://raw.githubusercontent.com/Inter-IIT/DigitalAlpha/Backend/docs/img/s6.jpg?token=GHSAT0AAAAAABQ5PJ4Z3RCXLMNNYRCKB6NAYRV7N2A)
 
 ## Beta Features
 
@@ -61,7 +53,8 @@ Some features currently in beta are:
 
 - **finBERT**: It is a BERT Variation trained specifically on financial statements. Here we feed the entire data of the 10K section wise to get the sentiment of each section like TAXES, DEBTS and STOCKS
   - ![BERT](https://miro.medium.com/max/1400/1*Fqcnq-Nf2JgdQ1MJIrE0Gg.png)
-- **LSTM + Sequential**: 
+- **LSTM**: It is a Sequential model based on one lstm layer and a final output node using relu as activation
+  - ![LSTM](https://upload.wikimedia.org/wikipedia/commons/5/53/Peephole_Long_Short-Term_Memory.svg)
 
 ## Total Objectives
 
