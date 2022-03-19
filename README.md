@@ -55,12 +55,25 @@ Some features currently in beta are:
 - **Document Sentiment Analysis:** Sentiment Analysis of the documents. Ref to `scripts/sentiment-analysis.ipynb`
 - **Deep Learning Model for Stock Prediction:** Sentiment Analysis of the company. Ref to `scripts/stockPred.ipynb`.
 
-## Objectives
+## Total Objectives
 
 - Scrape Data from the company's History since inception
-- Use 10-Q 10-K and 8-K filings to get the company's financial statements
+- Use 10-Q 10-K and 8-K filings to get the company's financial sentiments
 - Use Financial Statements to get the company's balance sheet, income statement, cash flow statement, and ratios
 - Use the data to get the company's current assets, liabilities, and equity
 - Generate SaaS Metrics
 - Generate a Financial Statement Analysis
 - Use the metrics with Deep Learning Systems to give Insightful Results
+
+## Completed Objectives
+
+- Scrape Data from the company's History since inception
+- Use Financial Statements to get the company's balance sheet, income statement, cash flow statement, and ratios
+- Use the data to get the company's current assets, liabilities, and equity
+- Generate a Financial Statement Analysis
+- Use the metrics with Deep Learning Systems to give Insightful Results
+
+## Future Goals
+
+- Generate SaaS Metrics
+- Use 10-Q 10-K and 8-K filings to get the company's financial sentiments
