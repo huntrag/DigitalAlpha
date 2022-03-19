@@ -81,7 +81,7 @@ def fetchCompanyMetrics(cik,startDate,endDate):
     mydb = client['tech-meet']
     form_data = mydb['form-data']
     find_q = {
-        "cik": cik,
+        "cik": int(cik),
         "$and": [
             {"date": {"$gte": startDate}},
             {"date": {"$lte": endDate}}
@@ -120,7 +120,7 @@ def generateDF(cik,nval,startDate,endDate = "2024-01-01"):
             for q in range(nval):
                 try:
                     finaldict[col].append( str(int(datdf['date'].iloc[-4+q][:4])+1)+"-"+str(datdf['date'].iloc[-4+q][5:]) )
-                    print(finaldict[col])
+                    
                 except:
                     print("Insufficient Values, cannot predict")
                     break

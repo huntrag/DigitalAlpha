@@ -3,7 +3,8 @@ from . import views
 
 urlpatterns = [ 
     path('', views.getAll), #q as the form paramter
-    path('bs',views.getBS), 
+    path('bs',views.getBS),
+    path('comp',views.comp),
     path('strict',views.getStrict), #q as the form paramter
-    path('<str:pk>',views.getId),    
+    path('<str:pk>',views.getId), 
 ]
