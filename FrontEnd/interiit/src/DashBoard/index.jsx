@@ -136,7 +136,7 @@ export default function DashBoard() {
               style={{ paddingTop: "40px" }}
             >
               <Grid item xs={12} sm={12} md={6} style={{}}>
-                <Card sx={{ maxWidth: 645, paddingTop: "20px" }}>
+                <Card sx={{ maxWidth: 1045, paddingTop: "20px" }}>
                   <CardHeader
                     action={
                       <IconButton
@@ -250,20 +250,20 @@ export default function DashBoard() {
                   </Collapse>
                 </Card>
               </Grid>
-              <Grid item xs={12} sm={12} md={6}>
-                <Card sx={{ maxWidth: 645 }}>
-                  <DetailList data={data} />
-                  <Button
-                    onClick={() => {
-                      setExpanedForChart(!expandedForChart);
-                    }}
-                  >
-                    {!expandedForChart
-                      ? `See More Details`
-                      : `See Less Details`}
-                  </Button>
-                </Card>
-              </Grid>
+              {/* <Grid item xs={12} sm={12} md={6}> */}
+              {/*   <Card sx={{ maxWidth: 645 }}> */}
+              {/*     <DetailList data={data} /> */}
+              {/*     <Button */}
+              {/*       onClick={() => { */}
+              {/*         setExpanedForChart(!expandedForChart); */}
+              {/*       }} */}
+              {/*     > */}
+              {/*       {!expandedForChart */}
+              {/*         ? `See More Details` */}
+              {/*         : `See Less Details`} */}
+              {/*     </Button> */}
+              {/*   </Card> */}
+              {/* </Grid> */}
             </Grid>
           </Grid>
         </Grid>
