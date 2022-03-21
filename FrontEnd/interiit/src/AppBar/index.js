@@ -1,4 +1,5 @@
 import * as React from 'react';
+import LogoSVG from "../resources/YOUR BIZNEZ (1).svg"
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -53,6 +54,7 @@ const ResponsiveAppBar = () => {
             onClick={handlClick}
           >
             {/* LOGO */}
+
           </Typography>
 
           <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
@@ -110,6 +112,14 @@ const ResponsiveAppBar = () => {
             sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}
           >
             {/* LOGO */}
+            {/* <LogoSVG style={{}}  /> */}
+            {/* </div> */}
+            <img src={LogoSVG}
+              style={{
+                width: "90px", height: "90px",
+                paddingTop: "10px", paddingBottom: "10px"
+              }}
+            />
           </Typography>
           <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
             {pages.map((page) => (
@@ -131,7 +141,13 @@ const ResponsiveAppBar = () => {
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
                 {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
-                SEC FILER
+                {/* SEC FILER */}
+
+                {/* <LogoSVG/> */}
+                <img src={LogoSVG} style={{
+                  width: "90px", height: "90px", paddingTop: "10px", paddingBottom: "10px"
+                  ,marginRight: "-300px"
+                }} />
               </IconButton>
             </Tooltip>
             <Menu
