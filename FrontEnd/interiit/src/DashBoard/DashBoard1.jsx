@@ -82,7 +82,7 @@ export default function GraphCard({ ...props }) {
     );
   }
   return (
-    <Card sx={{ maxWidth: 1000, paddingTop: "20px" }}>
+    <Card sx={{ maxWidth: 600, paddingTop: "20px" }}>
       <CardContent style={{ paddingTop: "2px" }}>
         {/* {FinalArr ? FinalArr.map(callBack) : <></>} */}
         {/* {console.log(FinalArr[2][0][1],"title")} */}
