@@ -65,7 +65,7 @@ export default function SearchBar({ ...props }) {
       else stringok = "";
       setSearchQueryNotSure(stringok);
       const response = await axios.get(
-        `http://localhost:8000/api/?q=${stringok}`
+        `https://secfiler.herokuapp.com/api/?q=${stringok}`
       );
       // console.log(response.data);
       setDataWhenNotSure(response.data);

@@ -1,10 +1,10 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-import {Chart} from "react-google-charts";
-import {CardContent} from "@mui/material";
-import Caros from "./caros"
+import { Chart } from "react-google-charts";
+import { CardContent } from "@mui/material";
+import Caros from "./caros";
 
-export default function GraphCard({...props}) {
+export default function GraphCard({ ...props }) {
   const [Graph, SetGraph] = React.useState([]);
   let datax = props;
   // console.log(datax, Graph, "Graphical Data");
@@ -41,8 +41,7 @@ export default function GraphCard({...props}) {
       for (let stepDaughter of FinalArr) {
         stepMom.push(stepDaughter[0]);
         stepMom.push(stepDaughter[i]);
-        if (stepDaughter[i] != 0)
-          stepDaughterx.push(stepMom);
+        if (stepDaughter[i] != 0) stepDaughterx.push(stepMom);
         stepMom = [];
       }
       i += 1;
@@ -63,7 +62,7 @@ export default function GraphCard({...props}) {
   const options = {
     title: "Company Performance",
     curveType: "function",
-    legend: {position: "bottom"},
+    legend: { position: "bottom" },
   };
   function callBack(elem) {
     // console.log(elem, "huehuehe");
@@ -76,19 +75,19 @@ export default function GraphCard({...props}) {
           title: elem[0][1],
           curveType: "function",
           height: "2000px",
-          legend: {position: "bottom"},
+          legend: { position: "bottom" },
           interpolateNulls: true,
         }}
       />
     );
   }
   return (
-    <Card sx={{maxWidth: 600, paddingTop: "20px"}}>
-      <CardContent style={{paddingTop: "2px"}}>
+    <Card sx={{ maxWidth: 1000, paddingTop: "20px" }}>
+      <CardContent style={{ paddingTop: "2px" }}>
         {/* {FinalArr ? FinalArr.map(callBack) : <></>} */}
         {/* {console.log(FinalArr[2][0][1],"title")} */}
         {FinalArr ? (
-          <div style={{paddingBottom: "20px"}}>
+          <div style={{ paddingBottom: "20px" }}>
             {/* <Carousel
               NextIcon={<NavigateNextIcon />}
               sx={{
