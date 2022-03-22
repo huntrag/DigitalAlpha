@@ -42,7 +42,7 @@ export default function SearchBar({ ...props }) {
       else stringok = "";
       setSearchQuery(stringok);
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/strict?q=${stringok}`
+        `https://secfiler.herokuapp.com/api/strict?q=${stringok}`
       );
       // console.log(response.data);
       setDataWhenSure(response.data);

@@ -58,7 +58,7 @@ export default function DashBoard() {
     // console.log(typeof date, data.cik);
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/bs?q1=${sendObj.cik}&q2=${date}`
+        `https://secfiler.herokuapp.com/api/bs?q1=${sendObj.cik}&q2=${date}`
       );
       // console.log(response.data, "res");
       setGraphData(response.data);
@@ -85,7 +85,7 @@ export default function DashBoard() {
       let ayo1 = [];
       try {
         const finalData = await axios.get(
-          `http://127.0.0.1:8000/api/stock?q=${data.ticker}`
+          `https://secfiler.herokuapp.com/api/stock?q=${data.ticker}`
         );
         console.log(finalData.data.data);
         SetStonks(finalData.data.data);
@@ -94,15 +94,14 @@ export default function DashBoard() {
         let arr2 = Object.values(arr);
         for (let index in arr1) {
           let dk = [];
-          if (index !== '0') {
+          if (index !== "0") {
             // console.log(index,"index")
             dk.push(arr1[index]);
             dk.push(arr2[index]);
             // dk.push(arr1[index]);
             // dk.push(arr2[index]);
           }
-         if(dk.length) 
-          ayo1.push(dk);
+          if (dk.length) ayo1.push(dk);
           dk = [];
         }
         SetStonks(ayo1);
@@ -174,20 +173,21 @@ export default function DashBoard() {
                     >
                       <Grid item xs={3}>
                         {console.log(Stonks)}
-                        {Stonks?
-                        <Chart
-                          chartType="LineChart"
-                          data={Stonks}
-                          style={{ paddingTop: "20px" }}
-                          options={{
-                            title: `Stock Graph`,
+                        {Stonks ? (
+                          <Chart
+                            chartType="LineChart"
+                            data={Stonks}
+                            style={{ paddingTop: "20px" }}
+                            options={{
+                              title: `Stock Graph`,
 
-                            curveType: "function",
-                            height: "200px",
-                            legend: { position: "bottom" },
-                            interpolateNulls: true,
-                          }}
-                        />:null}
+                              curveType: "function",
+                              height: "200px",
+                              legend: { position: "bottom" },
+                              interpolateNulls: true,
+                            }}
+                          />
+                        ) : null}
                       </Grid>
                     </Grid>
                   </Collapse>
