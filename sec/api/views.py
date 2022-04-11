@@ -66,6 +66,7 @@ def getBS(request):
         print(q1,q2)
         # print(raw['ticker'])
         # data=raw['data']
+
         
         # ans=[]
 
@@ -79,6 +80,7 @@ def getBS(request):
         newfile = pd.DataFrame.from_dict(CDK)
         
         ans=utils.convertToJson(newfile)
+
         # data = db_form.find({'ticker': raw['ticker']})
         return JsonResponse(parse_json({'status': 'success', 'data': ans}),status=200)
     except:
